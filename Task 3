@@ -1,2 +1,8 @@
 pixel_value = 180
 threshold = 150
+
+# Apply binary thresholding logic
+if pixel_value > threshold:
+   new_value = 225
+else:
+    new_value = 0
