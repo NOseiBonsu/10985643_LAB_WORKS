@@ -1,0 +1,35 @@
+TASK 2
+
+import cv2
+import matplotlib.pyplot as plt
+
+# Load the color image
+image = cv2.imread('photo.jpg')
+if image is None:
+    raise FileNotFoundError("Image file 'photo.jpg' not found!")
+
+# Convert to Grayscale, HSV, and LAB
+gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+hsv = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)
+lab = cv2.cvtColor(image, cv2.COLOR_BGR2LAB)
+
+# Save converted images
+cv2.imwrite('photo_grayscale.jpg', gray)
+cv2.imwrite('photo_hsv.jpg', hsv)
+cv2.imwrite('photo_lab.jpg', lab)
+
+# Display each converted image using OpenCV
+cv2.imshow("Grayscale", gray)
+cv2.imshow("HSV", hsv)
+cv2.imshow("LAB", lab)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+
+# Plot histogram of grayscale image using matplotlib
+plt.figure(figsize=(8, 5))
+plt.hist(gray.ravel(), bins=256, range=[0, 256], color='gray')
+plt.title('Histogram of Grayscale Image')
+plt.xlabel('Pixel Intensity')
+plt.ylabel('Frequency')
+plt.grid(True)
+plt.show()
