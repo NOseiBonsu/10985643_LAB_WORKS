@@ -1,7 +1,8 @@
+TASK 1
 import cv2
 import matplotlib.pyplot as plt
 
-# Load the original image
+# Load the original imagE
 image = cv2.imread('photo.jpg')
 
 # Check if image is loaded
