@@ -6,3 +6,5 @@ if pixel_value > threshold:
    new_value = 225
 else:
     new_value = 0
+
+print(f"New pixel value after thresholding: {new_value}")
